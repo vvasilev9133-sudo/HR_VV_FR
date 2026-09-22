@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR Record Tracker</title>
+    <link rel="stylesheet" href="styles.css?v=20260922" />
+  </head>
+  <body>
+    <section id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <p class="eyebrow">Secure access</p>
+        <h1>HR Record Tracker</h1>
+        <p class="login-copy">Choose a demo account to test the admin and employee views.</p>
+        <form id="loginForm" class="login-form">
+          <label for="accountSelect">Account</label>
+          <select id="accountSelect">
+            <option value="admin">Administrator</option>
+            <option value="employee-0">Employee 1</option>
+          </select>
+          <label for="passwordInput">Password</label>
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Enter password" required />
+          <button class="primary-btn" type="submit">Sign in</button>
+          <p id="loginMessage" class="login-message" aria-live="polite"></p>
+        </form>
+        <small>Demo passwords: admin123 and employee123</small>
+      </div>
+    </section>
+
+    <div id="appShell" class="app-shell hidden">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">HR / Project tracker</p>
+          <h1>HR Record Tracker</h1>
+        </div>
+        <div class="date-block">
+          <span id="currentUserLabel">Administrator</span>
+          <strong id="currentMonthLabel">Project summary</strong>
+          <button id="logoutBtn" class="text-btn" type="button">Log out</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel main-panel">
+          <div class="section-header">
+              <h2>Employee attendance</h2>
+            <div class="header-actions">
+              <button id="addEmployeeBtn" class="primary-btn" type="button">Add employee</button>
+              <button id="resetBtn" class="secondary-btn" type="button">Reset</button>
+            </div>
+          </div>
+
+            <div id="monthTabs" class="month-tabs" aria-label="Months"></div>
+
+          <div class="table-wrapper">
+            <table id="employeeTable" class="data-table"></table>
+          </div>
+        </section>
+
+        <aside class="panel summary-panel">
+          <h2>Summary</h2>
+
+          <div class="stat-box total-box">
+            <span>Employees</span>
+            <strong id="employeeCount">0</strong>
+          </div>
+
+          <div class="stat-box total-box alt">
+            <span>Completed checks</span>
+            <strong id="totalChecks">0</strong>
+          </div>
+
+          <div class="stat-box total-box neutral">
+            <span>Completion rate</span>
+            <strong id="completionRate">0%</strong>
+          </div>
+
+          <div class="analysis-box">
+            <h3>Analysis</h3>
+            <p id="analysisText">Use the employee table to record project checks and review overall progress.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js?v=20260922"></script>
+  </body>
+</html>
